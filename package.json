@@ -1,0 +1,31 @@
+
+{
+  "name": "react-native-user-notification",
+  "version": "0.0.1",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [
+    "react-native",
+    "push notification",
+    "user notification",
+    "ios",
+    "new api"
+  ],
+  "nativePackage": true,
+  "author": "Seraj Ahmad",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/clozr/react-native-user-notification"
+  },
+  "license": "MIT",
+  "peerDependencies": {
+    "react-native": "^0.41.2"
+  },
+  "dependencies": {
+    "underscore": "^1.8.3",
+    "fbjs": "^0.8.3"
+  }
+}
