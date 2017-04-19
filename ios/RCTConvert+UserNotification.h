@@ -5,6 +5,7 @@
 //  Created by Seraj Ahmad on 10/19/16.
 //  Copyright © 2016 Clozr Inc. All rights reserved.
 //  License: See License File
+//
 
 #ifndef RCTConvert_UserNotification_h
 #define RCTConvert_UserNotification_h

@@ -1,5 +1,6 @@
 /**
- * Copyright (c) Clozr Inc
+ * Copyright (c) 2016-present, Clozr Inc.
+ * All rights reserved.
  *
  * @providesModule UserNotification
  * @flow
@@ -7,11 +8,11 @@
 'use strict';
 
 const NativeEventEmitter = require('NativeEventEmitter');
-const RNUserNotificationManager = require('NativeModules').RNUserNotificationManager;
+const RNUserNotification = require('NativeModules').RNUserNotification;
 const invariant = require('fbjs/lib/invariant');
 const _ = require('underscore');
 
-const UNXEventEmitter = new NativeEventEmitter(RNUserNotificationManager);
+const UNXEventEmitter = new NativeEventEmitter(RNUserNotification);
 
 
 const _notifHandlers = new Map();
@@ -110,7 +111,7 @@ class NotificationRequest {
   schedule(): Promise {
     let req = {id: this.id, trigger: this.trigger, content: this.content};
     __DEV__ && console.log('[PUSH] scheduling:', req);
-    return RNUserNotificationManager.addNotification(req);
+    return RNUserNotification.addNotification(req);
   }
 }
 
@@ -133,7 +134,7 @@ class NotificationRequest {
  *
  * At the top of your `AppDelegate.m`:
  *
- *   `#import "RNUserNotificationManager.h"`
+ *   `#import "RNUserNotification.h"`
  *
  * And then in your AppDelegate implementation add the following:
  *
@@ -141,22 +142,22 @@ class NotificationRequest {
  *    // Required to register for notifications
  *    - (void)application:(UIApplication *)application didRegisterUserNotificationSettings:(UIUserNotificationSettings *)notificationSettings
  *    {
- *     [RNUserNotificationManager didRegisterUserNotificationSettings:notificationSettings];
+ *     [RNUserNotification didRegisterUserNotificationSettings:notificationSettings];
  *    }
  *    // Required for the register event.
  *    - (void)application:(UIApplication *)application didRegisterForRemoteNotificationsWithDeviceToken:(NSData *)deviceToken
  *    {
- *     [RNUserNotificationManager didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
+ *     [RNUserNotification didRegisterForRemoteNotificationsWithDeviceToken:deviceToken];
  *    }
  *    // Required for the notification event.
  *    - (void)application:(UIApplication *)application didReceiveRemoteNotification:(NSDictionary *)notification
  *    {
- *     [RNUserNotificationManager didReceiveRemoteNotification:notification];
+ *     [RNUserNotification didReceiveRemoteNotification:notification];
  *    }
  *    // Required for the localNotification event.
  *    - (void)application:(UIApplication *)application didReceiveLocalNotification:(UILocalNotification *)notification
  *    {
- *     [RNUserNotificationManager didReceiveLocalNotification:notification];
+ *     [RNUserNotification didReceiveLocalNotification:notification];
  *    }
  *    - (void)application:(UIApplication *)application didFailToRegisterForRemoteNotificationsWithError:(NSError *)error
  *    {
@@ -204,11 +205,11 @@ class NotificationCategory {
 
     let catoriesList = this.categories.map(c => c.json());
     __DEV__ && console.log('PUSH: ADDING CATEGORIES', catoriesList);
-    RNUserNotificationManager.setNotificationCategories(catoriesList);
+    RNUserNotification.setNotificationCategories(catoriesList);
   }
 
   static get() {
-    return RNUserNotificationManager.getNotificationCategories();
+    return RNUserNotification.getNotificationCategories();
   }
 }
 
@@ -227,7 +228,7 @@ class UserNotification {
   static initialResponse = null;
   static getInitialNotificationResponse(): Promise {
     if(!this.initialResponse) {
-      this.initialResponse = RNUserNotificationManager.getInitialNotificationResponse();
+      this.initialResponse = RNUserNotification.getInitialNotificationResponse();
       this.initialResponse.then((resp) => {
         __DEV__ && console.log("PUSH INITIAL RESPONSE", resp);
       });
@@ -239,28 +240,28 @@ class UserNotification {
    * get pending notifications
    */
   static getPendingNotifications(): Promise {
-    return RNUserNotificationManager.getPendingNotifications();
+    return RNUserNotification.getPendingNotifications();
   }
 
   /**
    * Removes pending notifications
    */
   static removePendingNotifications(notificationIds:Array<string> = null) {
-    return RNUserNotificationManager.removePendingNotifications(notificationIds);
+    return RNUserNotification.removePendingNotifications(notificationIds);
   }
 
   /**
    * get delivered notifications
    */
   static getDeliveredNotifications(): Promise {
-    return RNUserNotificationManager.getDeliveredNotifications();
+    return RNUserNotification.getDeliveredNotifications();
   }
 
   /**
    * Removes delivered notifications
    */
   static removeDeliveredNotifications(notificationIds:Array<string> = null) {
-    return RNUserNotificationManager.removeDeliveredNotifications(notificationIds);
+    return RNUserNotification.removeDeliveredNotifications(notificationIds);
   }
 
 
@@ -268,14 +269,14 @@ class UserNotification {
    * Sets the badge number for the app icon on the home screen
    */
   static setApplicationIconBadgeNumber(number: number) {
-    RNUserNotificationManager.setApplicationIconBadgeNumber(number);
+    RNUserNotification.setApplicationIconBadgeNumber(number);
   }
 
   /**
    * Gets the current badge number for the app icon on the home screen
    */
   static getApplicationIconBadgeNumber(callback: Function) {
-    RNUserNotificationManager.getApplicationIconBadgeNumber(callback);
+    RNUserNotification.getApplicationIconBadgeNumber(callback);
   }
 
   /**
@@ -349,7 +350,7 @@ class UserNotification {
         sound: !!permissions.sound
       };
     }
-    return RNUserNotificationManager.requestPermissions(requestedPermissions || null);
+    return RNUserNotification.requestPermissions(requestedPermissions || null);
   }
 
   /**
@@ -361,15 +362,15 @@ class UserNotification {
    * the Settings app. Apps unregistered through this method can always re-register.
    */
   static abandonPermissions() {
-    RNUserNotificationManager.abandonPermissions();
+    RNUserNotification.abandonPermissions();
   }
 
   static getNotificationSettings(): Promise {
-    return RNUserNotificationManager.getNotificationSettings();
+    return RNUserNotification.getNotificationSettings();
   }
 
   static triggerWaitingNotifications() {
-    RNUserNotificationManager.triggerWaitingNotifications();
+    RNUserNotification.triggerWaitingNotifications();
   }
 }
 
