@@ -1,15 +1,11 @@
 
 # react-native-user-notification
-**UNDER DEVELOPMENT**
-
-## TODO LIST
-1. Package up as react-native library
-2. Publish NPM package
-3. Add Installation Instruction
-4. Add Usage Documentation
-
 This package provides react-native javascript support to new IOS user notification API introduced in IOS 10.
 Please use this library only if you want to support advanced notification API in your react-native app. For older API use the RNPushNotification package from react-native.
+
+
+## TODO LIST
+1. Add Usage Documentation
 
 ## Getting started
 You will just need these two steps to pull in the library:
