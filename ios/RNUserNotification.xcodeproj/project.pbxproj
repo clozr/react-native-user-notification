@@ -7,6 +7,9 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		46400BBA1EA7C53200C4E95C /* RCTConvert+UserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = 46400BB41EA7C53200C4E95C /* RCTConvert+UserNotification.m */; };
+		46400BBB1EA7C53200C4E95C /* RNUserNotificationEvents.m in Sources */ = {isa = PBXBuildFile; fileRef = 46400BB71EA7C53200C4E95C /* RNUserNotificationEvents.m */; };
+		46400BBC1EA7C53200C4E95C /* RNUserNotificationFormat.m in Sources */ = {isa = PBXBuildFile; fileRef = 46400BB91EA7C53200C4E95C /* RNUserNotificationFormat.m */; };
 		B3E7B58A1CC2AC0600A0062D /* RNUserNotification.m in Sources */ = {isa = PBXBuildFile; fileRef = B3E7B5891CC2AC0600A0062D /* RNUserNotification.m */; };
 /* End PBXBuildFile section */
 
@@ -24,6 +27,13 @@
 
 /* Begin PBXFileReference section */
 		134814201AA4EA6300B7C361 /* libRNUserNotification.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; path = libRNUserNotification.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		46400BB31EA7C53200C4E95C /* RCTConvert+UserNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = "RCTConvert+UserNotification.h"; sourceTree = "<group>"; };
+		46400BB41EA7C53200C4E95C /* RCTConvert+UserNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "RCTConvert+UserNotification.m"; sourceTree = "<group>"; };
+		46400BB51EA7C53200C4E95C /* RNUserNotificationErrors.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUserNotificationErrors.h; sourceTree = "<group>"; };
+		46400BB61EA7C53200C4E95C /* RNUserNotificationEvents.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUserNotificationEvents.h; sourceTree = "<group>"; };
+		46400BB71EA7C53200C4E95C /* RNUserNotificationEvents.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUserNotificationEvents.m; sourceTree = "<group>"; };
+		46400BB81EA7C53200C4E95C /* RNUserNotificationFormat.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUserNotificationFormat.h; sourceTree = "<group>"; };
+		46400BB91EA7C53200C4E95C /* RNUserNotificationFormat.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUserNotificationFormat.m; sourceTree = "<group>"; };
 		B3E7B5881CC2AC0600A0062D /* RNUserNotification.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = RNUserNotification.h; sourceTree = "<group>"; };
 		B3E7B5891CC2AC0600A0062D /* RNUserNotification.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = RNUserNotification.m; sourceTree = "<group>"; };
 /* End PBXFileReference section */
@@ -50,6 +60,13 @@
 		58B511D21A9E6C8500147676 = {
 			isa = PBXGroup;
 			children = (
+				46400BB31EA7C53200C4E95C /* RCTConvert+UserNotification.h */,
+				46400BB41EA7C53200C4E95C /* RCTConvert+UserNotification.m */,
+				46400BB51EA7C53200C4E95C /* RNUserNotificationErrors.h */,
+				46400BB61EA7C53200C4E95C /* RNUserNotificationEvents.h */,
+				46400BB71EA7C53200C4E95C /* RNUserNotificationEvents.m */,
+				46400BB81EA7C53200C4E95C /* RNUserNotificationFormat.h */,
+				46400BB91EA7C53200C4E95C /* RNUserNotificationFormat.m */,
 				B3E7B5881CC2AC0600A0062D /* RNUserNotification.h */,
 				B3E7B5891CC2AC0600A0062D /* RNUserNotification.m */,
 				134814211AA4EA7D00B7C361 /* Products */,
@@ -112,7 +129,10 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				46400BBC1EA7C53200C4E95C /* RNUserNotificationFormat.m in Sources */,
 				B3E7B58A1CC2AC0600A0062D /* RNUserNotification.m in Sources */,
+				46400BBB1EA7C53200C4E95C /* RNUserNotificationEvents.m in Sources */,
+				46400BBA1EA7C53200C4E95C /* RCTConvert+UserNotification.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -197,7 +217,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				HEADER_SEARCH_PATHS = (
-				"$(inherited)",
+					"$(inherited)",
 					/Applications/Xcode.app/Contents/Developer/Toolchains/XcodeDefault.xctoolchain/usr/include,
 					"$(SRCROOT)/../../../React/**",
 					"$(SRCROOT)/../../react-native/React/**",
