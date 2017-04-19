@@ -27,8 +27,20 @@ If you prefer do it manually, here is what you should do:
 #### AppDelegate Modifications
 Next step is to include following code in app delegate:
 
-1. Add notification event instance
+1. Add the following code to your AppDelegate.h file
+This will make app delegate an UNUserNotificationDelegate as well.
 ```objc
+#import <UserNotifications/UserNotifications.h>
+
+@interface AppDelegate : UIResponder <UIApplicationDelegate, UNUserNotificationCenterDelegate>
+...
+...
+@end
+```
+2. Add the following code to your AppDelegate.m file
+```objc
+#import "RNUserNotificationEvents.h"
+
 @implementation AppDelegate {
     RNUserNotificationEvent* eventManager;
 }
