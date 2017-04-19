@@ -8,7 +8,7 @@
 
 #import <Foundation/Foundation.h>
 
-#import "RCTUtils.h"
+#import <React/RCTUtils.h>
 #import "RNUserNotificationFormat.h"
 
 @implementation NSDateComponents(RNRCTFormat)

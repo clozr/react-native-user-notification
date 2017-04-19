@@ -1,11 +1,15 @@
+//
+//  RNUserNotificationManager.h
+//  MoneyInbox
+//
+//  Created by Seraj Ahmad on 10/18/16.
+//  Copyright © 2016 Clozr Inc. All rights reserved.
+//
 
-#if __has_include("RCTBridgeModule.h")
-#import "RCTBridgeModule.h"
-#else
-#import <React/RCTBridgeModule.h>
-#endif
+#import <React/RCTEventEmitter.h>
 
-@interface RNUserNotification : NSObject <RCTBridgeModule>
-
+@interface RNUserNotification : RCTEventEmitter
 @end
-  
+
+
+

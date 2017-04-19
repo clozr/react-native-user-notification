@@ -9,7 +9,7 @@
 #ifndef RCTConvert_UserNotification_h
 #define RCTConvert_UserNotification_h
 
-#import "RCTConvert.h"
+#import <React/RCTConvert.h>
 
 #define DECLARE_RCT_CONVERTER(type) \
 + (type*)type:(id)json
@@ -33,7 +33,7 @@ DECLARE_RCT_CONVERTER(UNNotificationTrigger);
 @interface RCTConvert(UNNotificationRequest)
 DECLARE_RCT_CONVERTER(UNNotificationRequest);
 @end
-
+
 @interface RCTConvert(UIUserNotificationType)
 DECLARE_RCT_CUSTOM_CONVERTER(UIUserNotificationType, UIUserNotificationType);
 @end
